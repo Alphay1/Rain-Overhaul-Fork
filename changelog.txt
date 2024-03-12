@@ -2,8 +2,8 @@ WHATS NEW:
 
 ###
 # Space is now safe from the rain cycle.
-# Added previously missing non-safe furniture, including new "soft" blocks that are unsafe. A tooltip has been added to blocks that are not safe to use as shelter.
-# Adjusted the NPC interaction with the rain cycle, now non-town NPCs will immediately dissepear upon contact with the rain.
+# Added previously missing non-safe furniture, including new "soft" tiles that are unsafe. A tooltip has been added to tiles that are not safe to use as shelter.
+# Adjusted the NPC interaction with the rain cycle, now non-town NPCs will immediately disappear upon contact with death rain.
 # Added a config to change when the rain cycle ends, midnight or morning. A reload is required for the change to take effect.
-# Typo fixes.
+# Small changes to various texts, mostly grammar fixes.
 ###
