@@ -21,5 +21,12 @@ namespace RainOverhaul.Content {
         [Header("RainSettingsServer")]
         [DefaultValue(false)]
         public bool cRainWorld;
+
+        [Header("RainCycleEnd")]
+        [ReloadRequired]
+        [DefaultValue(16200)]
+        [Range(16200, 32399)]
+        [Increment(16199)]
+        public int cRainCycleEnd;
     }
 }

@@ -1,8 +1,9 @@
 WHATS NEW:
 
 ###
-# In-game wind affects mod's rain;
-# Better configuration file. Check this out;
-# Now "Rain World" mode has totally new rain system, called Cycles. Every day in the "Rain World" mode has 3 stages of cycles, which affects player's decisions in the world. Prepare to survive under the unfair rain. Each cycle appears in the screen, so you always know, what to expect;
-# Sound changes and fixes.
+# Space is now safe from the rain cycle.
+# Added previously missing non-safe furniture, including new "soft" blocks that are unsafe. A tooltip has been added to blocks that are not safe to use as shelter.
+# Adjusted the NPC interaction with the rain cycle, now non-town NPCs will immediately dissepear upon contact with the rain.
+# Added a config to change when the rain cycle ends, midnight or morning. A reload is required for the change to take effect.
+# Typo fixes.
 ###

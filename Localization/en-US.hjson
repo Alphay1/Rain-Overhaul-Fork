@@ -13,7 +13,7 @@ Mods: {
 					Label: Rain intensity
 					Tooltip:
 						'''
-						As less this parameter, as less rain effects.
+						Changes the intensity of the rain.
 						◉ ◉ ◉ ◌ | ◌ ◌ ◌
 						'''
 				}
@@ -22,7 +22,7 @@ Mods: {
 					Label: Cycle Indicator position
 					Tooltip:
 						'''
-						Affects position of the cycle's indicator in the "Rain World" mode.
+						Affects the position of the cycle indicator in "Rain World" mode.
 						◉ ◉ ◉ ◉ | ◌ ◌ ◌
 						'''
 				}
@@ -30,23 +30,36 @@ Mods: {
 
 			RainConfigServer: {
 				DisplayName: Rain Overhaul World Properties
-				Headers.RainSettingsServer: World Settings
+
+				Headers: {
+					RainSettingsServer: World Settings
+					RainCycleEnd: Rain Cycle End
+				}
 
 				cRainWorld: {
 					Label: '''"Rain World" Mode'''
 					Tooltip:
 						'''
-						This toggle adds cycles, which completely reworks rain system.
+						This toggle adds cycles, which completely reworks the rain system.
 						Run and hide to stay alive, like in "Rain World"!
 
 						[c/888888:Disables "{$RainConfig.cIntensity.Label}" parameter.]
 						◉ ◉ ◉ ◉ | ◉ ◌ ◌
 						'''
 				}
+
+				cRainCycleEnd: {
+					Label: Rain Cycle Ending Time
+					Tooltip:
+						'''
+						This changes how long the Rain Cycle will last, until midnight (16200) or morning (32399).
+						◉ ◉ ◉ ◉ | ◉ ◉ ◌
+						'''
+				}
 			}
 		}
 
-		RainDeathReason: died by virtue of the nature forces.
+		RainDeathReason: was crushed by torrental rain.
 
 		Biomes: {
 			aDimRainSound: {
@@ -67,8 +80,8 @@ Mods: {
 
 		Buffs: {
 			ShelterNotification: {
-				Description: The rain is too heavy! Find shelter quickly to prevent the inevitable!
-				DisplayName: It's raining somewhere else?
+				Description: You are being crushed by the rain, find shelter
+				DisplayName: Out of Shelter
 			}
 		}
 	}
