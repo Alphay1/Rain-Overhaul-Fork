@@ -37,12 +37,18 @@ namespace RainOverhaul.Content {
                     }
                 }
             }
-            
-            bool CommonCondition = Main.LocalPlayer.ZoneRain && !Main.LocalPlayer.ZoneNormalSpace && !Main.LocalPlayer.ZoneSandstorm && !Main.LocalPlayer.ZoneSnow;
-            if(ModContent.GetInstance<RainConfigServer>().cRainWorld && Main.raining && !NPCinSafePlace && (Main.LocalPlayer.Center-npc.Center).Length() < 1500 && CommonCondition) {
-                npc.AddBuff(ModContent.BuffType<ShelterNotification>(), 2);
+            if (!npc.townNPC) {
+                    bool CommonCondition = Main.LocalPlayer.ZoneRain && !Main.LocalPlayer.ZoneNormalSpace && !Main.LocalPlayer.ZoneSandstorm && !Main.LocalPlayer.ZoneSnow;
+                    if (ModContent.GetInstance<RainConfigServer>().cRainWorld && Main.raining && !NPCinSafePlace && (Main.LocalPlayer.Center - npc.Center).Length() < 1500 && CommonCondition) {
+                        npc.active=false;
+                }
+            } else {
+                    bool CommonCondition = Main.LocalPlayer.ZoneRain && !Main.LocalPlayer.ZoneNormalSpace && !Main.LocalPlayer.ZoneSandstorm && !Main.LocalPlayer.ZoneSnow;
+                    if (ModContent.GetInstance<RainConfigServer>().cRainWorld && Main.raining && !NPCinSafePlace && (Main.LocalPlayer.Center - npc.Center).Length() < 1500 && CommonCondition) {
+                        npc.AddBuff(ModContent.BuffType<ShelterNotification>(), 2);
+                    }
+                }
             }
-        }
         public override void UpdateLifeRegen(NPC npc, ref int damage) {
             if(LifeLost) {
                 npc.lifeRegen -= 200;

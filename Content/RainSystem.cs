@@ -37,9 +37,9 @@ namespace RainOverhaul.Content {
         public const int CycleRain = 2; 
 
         // Game time's pick states for "RainWorld" mode
-        public const int CycleClearTimeEnd = 51700; // time when quake cycle starts 
+        public const int CycleClearTimeEnd = 52200; // time when quake cycle starts 
         public const int CycleQuakeTimeEnd = 53999; // time when rain cycle starts 
-        public const int CycleRainTimeEnd = 16200; // time when clear cycle starts
+        public int CycleRainTimeEnd = ModContent.GetInstance<RainConfigServer>().cRainCycleEnd; // time when clear cycle starts
 
         public static int CycleState; // (clear / quake / raining) check consts above ^
         public float CycleRainForce;
@@ -68,7 +68,7 @@ namespace RainOverhaul.Content {
                 } else PlayerInSafePlace = false;
             }
 
-            bool CommonCondition = Main.LocalPlayer.ZoneRain && !Main.LocalPlayer.ZoneNormalSpace && !Main.LocalPlayer.ZoneSandstorm && !Main.LocalPlayer.ZoneSnow;
+            bool CommonCondition = Main.LocalPlayer.ZoneRain && !Main.LocalPlayer.ZoneNormalSpace && !Main.LocalPlayer.ZoneSkyHeight && !Main.LocalPlayer.ZoneSandstorm && !Main.LocalPlayer.ZoneSnow;
             bool RainCondition = !PlayerInSafePlace && CommonCondition;
 
             if(Main.LocalPlayer.ZoneBeach||Main.LocalPlayer.ZoneJungle) Extra = 1.4f;
@@ -140,7 +140,7 @@ namespace RainOverhaul.Content {
 
                         CycleQuakeStrength = 1f + (float)(Main.time - CycleClearTimeEnd) / (float)(Main.dayLength - CycleClearTimeEnd);
                         
-                        if(!Main.LocalPlayer.ZoneUnderworldHeight && !Main.LocalPlayer.ZoneNormalSpace && !Main.LocalPlayer.ZoneSandstorm && !Main.LocalPlayer.ZoneSnow) {
+                        if(!Main.LocalPlayer.ZoneUnderworldHeight && !Main.LocalPlayer.ZoneNormalSpace && !Main.LocalPlayer.ZoneSkyHeight && !Main.LocalPlayer.ZoneSandstorm && !Main.LocalPlayer.ZoneSnow) {
                             CycleQuakeImpulse = ((float)Math.Sin(MathHelper.ToRadians((float)(Main.time - CycleClearTimeEnd) / 2f))) * CycleQuakeStrength;
                         
                         } else { // if player left certain biome, stop the quake
